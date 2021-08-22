@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    The current Minute is {{pavani}}
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Country name </th>
+            <th>Country Short 2name </th>
+            <th>Country Short 3name </th>
+            <th>Country Capital</th>
+            <th>Country population</th>
+            <th>Country region</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let con of pavan" let i= index>
+           <td>{{con.name}}</td>
+           <td>{{con.alpha2Code}}</td>
+           <td>{{con.alpha3Code}}</td>
+           <td>{{con.capital}}</td>
+           <td>{{con.population}}</td>
+           <td>{{con.region}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>
