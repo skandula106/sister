@@ -1,0 +1,46 @@
+<div class="container mt-5">
+    <h2>Reactive forms practise</h2>
+    <form [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-lg-4 form-group">
+                <label>First name</label>
+                <input type="text" class="form-control" name="fname" formControlName="firstName" />
+                <small
+                    *ngIf="sampleForm.controls['firstName'].errors && (sampleForm.controls['firstName'].dirty || sampleForm.controls['firstName'].touched)">
+                    <small class="text-danger" *ngIf="sampleForm.get('firstName').hasError('required')">Firstname is required</small>
+                    <small class="text-danger"
+                        *ngIf="(sampleForm.get('firstName').hasError('minlength'))">
+                        firstname is must be greater than 3 characters 
+                    </small>
+                    <small class="text-danger"
+                        *ngIf="(sampleForm.get('firstName').hasError('maxlength'))">
+                        firstname is must be less than 50 characters 
+                    </small>
+                </small>
+            </div>
+            <div class="col-lg-4 form-group">
+                <label>Last name</label>
+                <input type="text" class="form-control" name="lname" formControlName="lastName" />
+            </div>
+            <div class="col-lg-4 form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" name="email" formControlName="email" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 form-group">
+                <label>Father name</label>
+                <input type="text" class="form-control" name="faterName" formControlName="faterName" />
+            </div>
+            <div class="col-lg-4 form-group">
+                <label>Mother name</label>
+                <input type="text" class="form-control" name="motherName" formControlName="motherName" />
+            </div>
+            <div class="col-lg-4 form-group">
+                <label>Location</label>
+                <input type="text" class="form-control" name="location" formControlName="location" />
+            </div>
+        </div>
+        <button class="btn btn-primary btn-small float-right" type="submit" [disabled]="sampleForm.invalid">Sumit</button>
+    </form>
+</div>

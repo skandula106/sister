@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <div class="row">
+            <div class="col-lg-4 form-group">
+                <label>First name</label>
+                <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required />
+                <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                    <div *ngIf="firstName.errors.required">First Name is required</div>
+                </div> 
+            </div>
+            <div class="col-lg-4 form-group">
+                <label>Last name</label>
+                <input type="text" class="form-control" name="lastname" [(ngModel)]="model.lastname" #lstname="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lstname.invalid }" required />
+                <div *ngIf="f.submitted && lstname.invalid" class="invalid-feedback">
+                    <div *ngIf="lastname.errors.required">Last Name is required</div>
+                </div> 
+            </div>
+            <div class="col-lg-4 form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 form-group">
+                <label>Father name</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="col-lg-4 form-group">
+                <label>Mother name</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="col-lg-4 form-group">
+                <label>Location</label>
+                <input type="text" class="form-control" />
+            </div>
+        </div>
+        <button class="btn btn-primary btn-small float-right" type="submit">Sumit</button>
+    </form>
+</div>

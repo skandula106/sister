@@ -10,6 +10,9 @@ import { DComponent } from './d/d.component';
 import { EComponent } from './e/e.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormTempComponent } from './form-temp/form-temp.component';
+import { FormReactiveComponent } from './form-reactive/form-reactive.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,13 +20,17 @@ import { HttpClientModule } from '@angular/common/http';
     BComponent,
     CComponent,
     DComponent,
-    EComponent
+    EComponent,
+    FormTempComponent,
+    FormReactiveComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
